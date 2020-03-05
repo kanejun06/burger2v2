@@ -2,7 +2,8 @@
     "name": "Burger2",
     "dependencies": {
         "device": "*",
-        "controller": "*"
+        "controller": "*",
+        "animation": "*"
     },
     "description": "",
     "files": [
