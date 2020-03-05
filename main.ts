@@ -1,10 +1,8 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     music.baDing.play()
+    mySprite3.say("^o^", 1000)
     info.changeScoreBy(1)
     mySprite4.setPosition(Math.randomRange(10, 150), Math.randomRange(10, 110))
-})
-controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite3.say("ouch!", 400)
@@ -160,6 +158,7 @@ e e b e c c e e e e e c e b e e
 . e e b b 4 4 4 4 4 4 4 4 e e . 
 . . . c c c c c e e e e e . . . 
 `, SpriteKind.Enemy)
+            music.siren.play()
             Enemy3.vx = Math.randomRange(20, 40)
             Enemy3.vy = Math.randomRange(50, 70)
             Enemy3.setFlag(SpriteFlag.BounceOnWall, true)
