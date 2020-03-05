@@ -1,6 +1,6 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     music.baDing.play()
-    mySprite3.say("^o^", 1000)
+    mySprite3.say("^^", 1000)
     info.changeScoreBy(1)
     mySprite4.setPosition(Math.randomRange(10, 150), Math.randomRange(10, 110))
 })
@@ -113,7 +113,7 @@ c b d d d d d 5 5 5 5 5 5 5 b .
 . . c b d d d d d 5 5 5 b b . . 
 . . . c c c c c c c c b b . . . 
 `, SpriteKind.Player)
-info.setLife(5)
+info.setLife(10)
 mySprite3.setPosition(10, 23)
 controller.moveSprite(mySprite3, 110, 110)
 mySprite3.setFlag(SpriteFlag.StayInScreen, true)
@@ -136,9 +136,9 @@ e e e 2 e e c e c c c . . . . .
 . c c c c c c c . . . . . . . . 
 `, SpriteKind.Food)
 mySprite4.setPosition(Math.randomRange(10, 150), Math.randomRange(10, 110))
-let list = [1, 2]
+music.setVolume(199)
 game.onUpdate(function () {
-    if (info.score() > 4) {
+    if (info.score() > 19) {
         if (enemyGenFlag == 0) {
             Enemy3 = sprites.create(img`
 . . . . c c c b b b b b . . . . 
@@ -170,4 +170,7 @@ forever(function () {
     console.logValue("x", controller.acceleration(ControllerDimension.X))
     console.logValue("y", controller.acceleration(ControllerDimension.Y))
     mySprite3.setVelocity(Math.map(controller.acceleration(ControllerDimension.X), -30, 30, 0, 60), Math.map(controller.acceleration(ControllerDimension.Y), -500, -400, 120, 0))
+})
+forever(function () {
+    music.playMelody("A F E F D G E C ", 140)
 })
